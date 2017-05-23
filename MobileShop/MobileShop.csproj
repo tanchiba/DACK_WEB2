@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DDED9D33-24F7-4138-94B2-C8E2A3306929}</ProjectGuid>
+    <ProjectGuid>{44A5E370-53F2-4C04-AA5F-3AF1AC97EBC5}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -177,16 +177,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BUS\SanPhamBUS.cs" />
+    <Compile Include="Models\Generated\Database.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PetaPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -212,34 +219,7 @@
     <Content Include="Assets\images\cart\one.png" />
     <Content Include="Assets\images\cart\three.png" />
     <Content Include="Assets\images\cart\two.png" />
-    <Content Include="Assets\images\home\14a97d34-e2d2-403f-a6f6-8d291af71308.jpg" />
-    <Content Include="Assets\images\home\30b0291d-41d7-4f66-902b-2c35c80e018d.jpg" />
-    <Content Include="Assets\images\home\3689fdad-1a52-4372-8662-a6c6a817e905.jpg" />
-    <Content Include="Assets\images\home\467a9335-2b6f-45a0-9bfe-593dc87e1834.jpg" />
-    <Content Include="Assets\images\home\50014f93-f9fb-4224-93c0-9ab307195115.jpg" />
-    <Content Include="Assets\images\home\577079fe-4d0e-479e-a4d1-e7e3bbfccc85.jpg" />
-    <Content Include="Assets\images\home\61fe259e-8f21-4529-9b11-340db1faeb7b.jpg" />
-    <Content Include="Assets\images\home\7966a4da-b43f-4b4b-9758-11e57cf457a2.jpg" />
-    <Content Include="Assets\images\home\928592e0-95ac-41f0-ab7c-859c97c23804.jpg" />
-    <Content Include="Assets\images\home\9b561b84-0bfa-4da9-be1c-76253159f91c.jpg" />
-    <Content Include="Assets\images\home\ac67c3e6-ef10-4531-8589-222328873b5a.jpg" />
-    <Content Include="Assets\images\home\apple.png" />
-    <Content Include="Assets\images\home\ASUS.png" />
-    <Content Include="Assets\images\home\asus_zenfone_2_laser.jpg" />
-    <Content Include="Assets\images\home\asus_zenfone_2_laser_lte.jpg" />
-    <Content Include="Assets\images\home\asus_zenfone_3_max.jpg" />
-    <Content Include="Assets\images\home\asus_zenfone_3_max_zc553kl.jpg" />
-    <Content Include="Assets\images\home\asus_zenfone_3_ze552kl.jpg" />
-    <Content Include="Assets\images\home\asus_zenfone_selfie.jpg" />
-    <Content Include="Assets\images\home\banner01.gif" />
-    <Content Include="Assets\images\home\banner02.png" />
-    <Content Include="Assets\images\home\banner03.gif" />
-    <Content Include="Assets\images\home\banner04.png" />
-    <Content Include="Assets\images\home\banner05.png" />
     <Content Include="Assets\images\home\bg_border.png" />
-    <Content Include="Assets\images\home\c0582a7e-cd5e-4900-8ff7-d83f71440eec.jpg" />
-    <Content Include="Assets\images\home\d9457fee-225f-4b75-9011-8c5b2a197c38.jpg" />
-    <Content Include="Assets\images\home\errorUpload.png" />
     <Content Include="Assets\images\home\gallery1.jpg" />
     <Content Include="Assets\images\home\gallery2.jpg" />
     <Content Include="Assets\images\home\gallery3.jpg" />
@@ -247,37 +227,13 @@
     <Content Include="Assets\images\home\girl1.jpg" />
     <Content Include="Assets\images\home\girl2.jpg" />
     <Content Include="Assets\images\home\girl3.jpg" />
-    <Content Include="Assets\images\home\huawei.png" />
-    <Content Include="Assets\images\home\huawei_gr5_2.jpg" />
-    <Content Include="Assets\images\home\huawei_gr5_2017.jpg" />
-    <Content Include="Assets\images\home\huawei_gr5_mini.jpg" />
-    <Content Include="Assets\images\home\huawei_y541_10.jpg" />
-    <Content Include="Assets\images\home\huawei_y5_ii.jpg" />
-    <Content Include="Assets\images\home\huawei_y6_ii.jpg" />
     <Content Include="Assets\images\home\iframe1.png" />
     <Content Include="Assets\images\home\iframe2.png" />
     <Content Include="Assets\images\home\iframe3.png" />
     <Content Include="Assets\images\home\iframe4.png" />
-    <Content Include="Assets\images\home\iphone_6s_128.jpg" />
-    <Content Include="Assets\images\home\iphone_6s_plus_64.jpg" />
-    <Content Include="Assets\images\home\iphone_7_256_jetblack.jpg" />
-    <Content Include="Assets\images\home\iphone_7_plus_128.jpg" />
-    <Content Include="Assets\images\home\iphone_7_plus_256.jpg" />
-    <Content Include="Assets\images\home\iphone_7_plus_32.jpg" />
-    <Content Include="Assets\images\home\iphone_se_64.jpg" />
     <Content Include="Assets\images\home\logo.png" />
     <Content Include="Assets\images\home\map.png" />
-    <Content Include="Assets\images\home\microsoft_lumia_640.jpg" />
     <Content Include="Assets\images\home\new.png" />
-    <Content Include="Assets\images\home\nokia.png" />
-    <Content Include="Assets\images\home\nokia_lumia_730_dual.jpg" />
-    <Content Include="Assets\images\home\oppo.png" />
-    <Content Include="Assets\images\home\oppo_a37_neo_9.jpg" />
-    <Content Include="Assets\images\home\oppo_a39_neo_9.jpg" />
-    <Content Include="Assets\images\home\oppo_f1s.jpg" />
-    <Content Include="Assets\images\home\oppo_f1_plus.jpg" />
-    <Content Include="Assets\images\home\oppo_neo_7.jpg" />
-    <Content Include="Assets\images\home\oppo_neo_7s.jpg" />
     <Content Include="Assets\images\home\partner1.png" />
     <Content Include="Assets\images\home\partner2.png" />
     <Content Include="Assets\images\home\partner3.png" />
@@ -293,22 +249,8 @@
     <Content Include="Assets\images\home\recommend2.jpg" />
     <Content Include="Assets\images\home\recommend3.jpg" />
     <Content Include="Assets\images\home\sale.png" />
-    <Content Include="Assets\images\home\samsung.png" />
-    <Content Include="Assets\images\home\samsung_galaxy_a3_2016.jpg" />
-    <Content Include="Assets\images\home\samsung_galaxy_a9_pro.jpg" />
-    <Content Include="Assets\images\home\samsung_galaxy_j7.jpg" />
-    <Content Include="Assets\images\home\samsung_galaxy_j7_prime.jpg" />
-    <Content Include="Assets\images\home\samsung_galaxy_note_5.jpg" />
-    <Content Include="Assets\images\home\samsung_galaxy_s7_edge.jpg" />
     <Content Include="Assets\images\home\searchicon.png" />
     <Content Include="Assets\images\home\shipping.jpg" />
-    <Content Include="Assets\images\home\sony.png" />
-    <Content Include="Assets\images\home\sony_xperia_m5_single.jpg" />
-    <Content Include="Assets\images\home\sony_xperia_x.jpg" />
-    <Content Include="Assets\images\home\sony_xperia_xa.jpg" />
-    <Content Include="Assets\images\home\sony_xperia_xa_ultra.jpg" />
-    <Content Include="Assets\images\home\sony_xperia_xz.jpg" />
-    <Content Include="Assets\images\home\sony_xperia_z5.jpg" />
     <Content Include="Assets\images\product-details\1.jpg" />
     <Content Include="Assets\images\product-details\new.jpg" />
     <Content Include="Assets\images\product-details\rating.png" />
@@ -323,6 +265,75 @@
     <Content Include="Assets\images\shop\product7.jpg" />
     <Content Include="Assets\images\shop\product8.jpg" />
     <Content Include="Assets\images\shop\product9.jpg" />
+    <Content Include="Assets\image\products\057dfec4-7e52-4863-992d-e4cbfbb4f5af.jpg" />
+    <Content Include="Assets\image\products\0770a4cf-db5f-4e6b-b6aa-3b3e219d6a71.jpg" />
+    <Content Include="Assets\image\products\227b7833-9aba-467d-b470-b1947c5d47bb.jpg" />
+    <Content Include="Assets\image\products\278d3340-0b61-444d-b7f7-e01c550c2790.jpg" />
+    <Content Include="Assets\image\products\38c3f6f6-6d5a-475e-9681-21b9f56b95fe.jpg" />
+    <Content Include="Assets\image\products\40c9157c-412b-4a40-9f88-47c8f7106a37.jpg" />
+    <Content Include="Assets\image\products\a72017gold1.2_1.png" />
+    <Content Include="Assets\image\products\add.png" />
+    <Content Include="Assets\image\products\apple.png" />
+    <Content Include="Assets\image\products\ASUS.png" />
+    <Content Include="Assets\image\products\asus_zenfone_2_laser.jpg" />
+    <Content Include="Assets\image\products\asus_zenfone_2_laser_lte.jpg" />
+    <Content Include="Assets\image\products\asus_zenfone_3_max.jpg" />
+    <Content Include="Assets\image\products\asus_zenfone_3_max_zc553kl.jpg" />
+    <Content Include="Assets\image\products\asus_zenfone_3_ze552kl.jpg" />
+    <Content Include="Assets\image\products\asus_zenfone_selfie.jpg" />
+    <Content Include="Assets\image\products\baf9792b-357a-45db-8645-b48d7cfd852d.jpg" />
+    <Content Include="Assets\image\products\c3378ce7-b1d0-4a9d-9e54-8867c2a38165.jpg" />
+    <Content Include="Assets\image\products\Close.png" />
+    <Content Include="Assets\image\products\edit.png" />
+    <Content Include="Assets\image\products\errorUpload.png" />
+    <Content Include="Assets\image\products\hinh1.jpg" />
+    <Content Include="Assets\image\products\huawei.png" />
+    <Content Include="Assets\image\products\huawei_gr5_2.jpg" />
+    <Content Include="Assets\image\products\huawei_gr5_2017.jpg" />
+    <Content Include="Assets\image\products\huawei_gr5_mini.jpg" />
+    <Content Include="Assets\image\products\huawei_y541_10.jpg" />
+    <Content Include="Assets\image\products\huawei_y5_ii.jpg" />
+    <Content Include="Assets\image\products\huawei_y6_ii.jpg" />
+    <Content Include="Assets\image\products\iphone-6-plus-gold_24_1.png" />
+    <Content Include="Assets\image\products\iphone-7-plus-1_2_1.png" />
+    <Content Include="Assets\image\products\iphone_6s_128.jpg" />
+    <Content Include="Assets\image\products\iphone_6s_plus_64.jpg" />
+    <Content Include="Assets\image\products\iphone_7_256_jetblack.jpg" />
+    <Content Include="Assets\image\products\iphone_7_plus_128.jpg" />
+    <Content Include="Assets\image\products\iphone_7_plus_256.jpg" />
+    <Content Include="Assets\image\products\iphone_7_plus_32.jpg" />
+    <Content Include="Assets\image\products\iphone_se_64.jpg" />
+    <Content Include="Assets\image\products\microsoft_lumia_640.jpg" />
+    <Content Include="Assets\image\products\nokia.png" />
+    <Content Include="Assets\image\products\nokia_lumia_730_dual.jpg" />
+    <Content Include="Assets\image\products\oppo.png" />
+    <Content Include="Assets\image\products\oppo_a37_neo_9.jpg" />
+    <Content Include="Assets\image\products\oppo_a39_neo_9.jpg" />
+    <Content Include="Assets\image\products\oppo_f1s.jpg" />
+    <Content Include="Assets\image\products\oppo_f1_plus.jpg" />
+    <Content Include="Assets\image\products\oppo_neo_7.jpg" />
+    <Content Include="Assets\image\products\oppo_neo_7s.jpg" />
+    <Content Include="Assets\image\products\s8.gif" />
+    <Content Include="Assets\image\products\samsung.png" />
+    <Content Include="Assets\image\products\samsung8.png" />
+    <Content Include="Assets\image\products\samsung_galaxy_a3_2016.jpg" />
+    <Content Include="Assets\image\products\samsung_galaxy_a9_pro.jpg" />
+    <Content Include="Assets\image\products\samsung_galaxy_j7.jpg" />
+    <Content Include="Assets\image\products\samsung_galaxy_j7_prime.jpg" />
+    <Content Include="Assets\image\products\samsung_galaxy_note_5.jpg" />
+    <Content Include="Assets\image\products\samsung_galaxy_s7_edge.jpg" />
+    <Content Include="Assets\image\products\sony.png" />
+    <Content Include="Assets\image\products\sony_xperia_m5_single.jpg" />
+    <Content Include="Assets\image\products\sony_xperia_x.jpg" />
+    <Content Include="Assets\image\products\sony_xperia_xa.jpg" />
+    <Content Include="Assets\image\products\sony_xperia_xa_ultra.jpg" />
+    <Content Include="Assets\image\products\sony_xperia_xz.jpg" />
+    <Content Include="Assets\image\products\sony_xperia_z5.jpg" />
+    <Content Include="Assets\image\products\xiaomi-mi-mix-2.png" />
+    <Content Include="Assets\image\s1.gif" />
+    <Content Include="Assets\image\s3.png" />
+    <Content Include="Assets\image\s2.png" />
+    <Content Include="Assets\image\s4.png" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\contact.js" />
     <Content Include="Assets\js\gmaps.js" />
@@ -338,12 +349,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Generated\Database.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Database.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
+    <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -391,12 +407,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\SanPham\Index.cshtml" />
+    <Content Include="Views\SanPham\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -405,6 +420,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -422,9 +440,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51582</DevelopmentServerPort>
+          <DevelopmentServerPort>63370</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51582/</IISUrl>
+          <IISUrl>http://localhost:63370/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
