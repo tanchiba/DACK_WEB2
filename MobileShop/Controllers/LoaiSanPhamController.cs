@@ -1,32 +1,34 @@
-﻿using System;
+﻿using MobileShop.Models.BUS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MobileShop.Areas.Admin.Controllers
+namespace MobileShop.Controllers
 {
-    public class SanPhamAdminController : Controller
+    public class LoaiSanPhamController : Controller
     {
-        // GET: Admin/SanPhamAdmin
+        // GET: LoaiSanPham
         public ActionResult Index()
         {
-            return View();
+            var dslsp = LoaiSanPhamBUS.DanhSach();
+            return View(dslsp);
         }
 
-        // GET: Admin/SanPhamAdmin/Details/5
+        // GET: LoaiSanPham/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Admin/SanPhamAdmin/Create
+        // GET: LoaiSanPham/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/SanPhamAdmin/Create
+        // POST: LoaiSanPham/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -42,13 +44,13 @@ namespace MobileShop.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/SanPhamAdmin/Edit/5
+        // GET: LoaiSanPham/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Admin/SanPhamAdmin/Edit/5
+        // POST: LoaiSanPham/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -64,13 +66,13 @@ namespace MobileShop.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/SanPhamAdmin/Delete/5
+        // GET: LoaiSanPham/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Admin/SanPhamAdmin/Delete/5
+        // POST: LoaiSanPham/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
