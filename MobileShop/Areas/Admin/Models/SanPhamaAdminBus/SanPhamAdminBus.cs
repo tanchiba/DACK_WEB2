@@ -13,5 +13,10 @@ namespace MobileShop.Areas.Admin.Models.SanPhamaAdminBus
             var db = new MobileShopConnectionDB();
             return db.Query<SanPham>("select  * from SanPham");
         }
+        public static void Them(MobileShopConnection.SanPham sp)
+        {
+            var db = new MobileShopConnectionDB();
+            db.Insert(sp);
+        }
     }
 }

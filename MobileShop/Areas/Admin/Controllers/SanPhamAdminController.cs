@@ -29,12 +29,12 @@ namespace MobileShop.Areas.Admin.Controllers
 
         // POST: Admin/SanPhamAdmin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(MobileShopConnection.SanPham sp)
         {
             try
             {
                 // TODO: Add insert logic here
-
+                SanPhamAdminBus.Them(sp);
                 return RedirectToAction("Index");
             }
             catch

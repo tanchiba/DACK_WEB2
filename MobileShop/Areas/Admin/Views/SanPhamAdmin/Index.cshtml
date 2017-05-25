@@ -8,53 +8,40 @@
 </p>
 <table class="table">
     <tr>
+       
         <th>
-            @Html.DisplayNameFor(model => model.MaSanPham)
+           Tên sản phẩm
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TenSanPham)
+           Mô tả
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MoTa)
+            Xuất sứ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.XuatXu)
+            Nhà sản xuất
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MaNhaSanXuat)
+           Giá bán
+        </th>
+       
+        <th>
+           Số lượng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GiaBan)
+           Số lượng tồn
         </th>
+      
         <th>
-            @Html.DisplayNameFor(model => model.NgayNhap)
+           Hình ảnh
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SoLuongBan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SoLuongTon)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaLoaiSanPham)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SoLuongXem)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HinhAnh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BiXoa)
-        </th>
+        
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaSanPham)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.TenSanPham)
         </td>
@@ -70,31 +57,23 @@
         <td>
             @Html.DisplayFor(modelItem => item.GiaBan)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayNhap)
-        </td>
+     
         <td>
             @Html.DisplayFor(modelItem => item.SoLuongBan)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SoLuongTon)
         </td>
+      
+        
         <td>
-            @Html.DisplayFor(modelItem => item.MaLoaiSanPham)
+            <img src="@item.HinhAnh"/>
         </td>
+      
         <td>
-            @Html.DisplayFor(modelItem => item.SoLuongXem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HinhAnh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BiXoa)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Edit", "Edit", new {  id=item.MaSanPham }) |
             @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Delete", "Delete", new {  id=item.MaSanPham })
         </td>
     </tr>
 }
