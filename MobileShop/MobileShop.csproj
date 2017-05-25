@@ -515,6 +515,8 @@
     <Content Include="Areas\img\icons\32\Thumbs.db" />
     <Content Include="Areas\img\Thumbs.db" />
     <Content Include="Areas\Admin\Views\SanPhamAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhamAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhamAdmin\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

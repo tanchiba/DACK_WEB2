@@ -46,17 +46,17 @@ namespace MobileShop.Areas.Admin.Controllers
         // GET: Admin/SanPhamAdmin/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(SanPhamAdminBus.ChiTietSP(id));
         }
 
         // POST: Admin/SanPhamAdmin/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, MobileShopConnection.SanPham sp)
         {
             try
             {
                 // TODO: Add update logic here
-
+                SanPhamAdminBus.Update(id, sp);
                 return RedirectToAction("Index");
             }
             catch
@@ -68,17 +68,17 @@ namespace MobileShop.Areas.Admin.Controllers
         // GET: Admin/SanPhamAdmin/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(SanPhamAdminBus.ChiTietSP(id));
         }
 
         // POST: Admin/SanPhamAdmin/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, MobileShopConnection.SanPham sp)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                SanPhamAdminBus.Delete(id, sp);
                 return RedirectToAction("Index");
             }
             catch
