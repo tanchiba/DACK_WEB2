@@ -129,9 +129,11 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">                                                                     
-                                        @Html.Action("Index", "LoaiSanPham")                                                                                                         
+                                        @Html.Partial("_LoaiSanPham", MobileShop.Models.BUS.LoaiSanPhamBUS.DanhSach())                                                                                                                                                                            
                                 </li>
                                 <li class="dropdown">
+                                    @Html.Partial("_NhaSanXuat", MobileShop.Models.BUS.NhaSanXuatBUS.DanhSach())
+                                    
                                     @*@Html.Action("Index", "NhaSanXuatMenu")*@
                                 </li>
                                 <li><a href="contact-us.html">Contact</a></li>
