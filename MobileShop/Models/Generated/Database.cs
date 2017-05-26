@@ -15,6 +15,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PetaPoco;
+using System.Web.Http;
+using System.Web.Mvc;
 
 namespace MobileShopConnection
 {
@@ -260,7 +262,13 @@ namespace MobileShopConnection
     {
 		[Column] public int MaSanPham { get; set; }
 		[Column] public string TenSanPham { get; set; }
-		[Column] public string MoTa { get; set; }
+
+        [AllowHtml]
+        [Column] public string MoTa
+        {
+            get;
+            set;
+        }
 		[Column] public string XuatXu { get; set; }
 		[Column] public int MaNhaSanXuat { get; set; }
 		[Column] public int? GiaBan { get; set; }

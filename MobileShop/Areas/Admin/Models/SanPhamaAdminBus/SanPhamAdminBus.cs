@@ -21,7 +21,7 @@ namespace MobileShop.Areas.Admin.Models.SanPhamaAdminBus
         public static void Update(int id, MobileShopConnection.SanPham sp)
         {
             var db = new MobileShopConnectionDB();
-            db.Update<SanPham>("SET TenSanPham = @0, MoTa = @1, XuatXu = @2, MaNhaSanXuat = @3, GiaBan = @4, SoLuongBan = @5, SoLuongTon = @6, MaLoaiSanPham = @7, HinhAnh = @8, BiXoa = @9 where MaSanPham = @10", sp.TenSanPham, sp.MoTa, sp.XuatXu, sp.MaNhaSanXuat, sp.GiaBan, sp.SoLuongBan, sp.SoLuongTon, sp.MaLoaiSanPham, sp.HinhAnh,sp.BiXoa, id);
+            db.Update<SanPham>("SET TenSanPham = @0, MoTa = @1, XuatXu = @2, MaNhaSanXuat = @3, GiaBan = @4, SoLuongBan = @5, SoLuongTon = @6, MaLoaiSanPham = @7, HinhAnh = @8 where MaSanPham = @9", sp.TenSanPham, sp.MoTa, sp.XuatXu, sp.MaNhaSanXuat, sp.GiaBan, sp.SoLuongBan, sp.SoLuongTon, sp.MaLoaiSanPham, sp.HinhAnh,id);
         }
         public static void Delete(int id, MobileShopConnection.SanPham sp)
         {
