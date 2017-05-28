@@ -18,7 +18,7 @@ namespace MobileShop.Models.BUS
         public static IEnumerable<SanPham> ChiTiet(int id)
         {
             var db = new MobileShopConnectionDB();
-            return db.Query<SanPham>("select * from SanPham where MaNhaSanXuat = @0", id);
+            return db.Query<SanPham>("select * from sanpham where MaNhaSanXuat = @0", id);
 
         }
     }

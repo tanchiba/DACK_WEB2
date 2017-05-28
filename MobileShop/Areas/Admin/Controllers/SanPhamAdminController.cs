@@ -34,6 +34,19 @@ namespace MobileShop.Areas.Admin.Controllers
             try
             {
                 // TODO: Add insert logic here
+                if (HttpContext.Request.Files.Count > 0)
+                {
+                    var hpf = HttpContext.Request.Files[0];
+                    if (hpf.ContentLength > 0)
+                    {
+                        string fileName = Guid.NewGuid().ToString();
+                       
+                        string fullPathWithFileName = "/Assets/images/home/" + fileName + ".jpg";
+                        hpf.SaveAs(Server.MapPath(fullPathWithFileName));
+                        sp.HinhAnh = fullPathWithFileName;
+                    }
+                }
+                sp.BiXoa = 0;
                 SanPhamAdminBus.Them(sp);
                 return RedirectToAction("Index");
             }
