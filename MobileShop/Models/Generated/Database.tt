@@ -6,7 +6,6 @@
     RepoName = "";
     GenerateOperations = true;
 	GeneratePocos = true;
-	GenerateCommon = true;
 	ClassPrefix = "";
 	ClassSuffix = "";
 	TrackModifiedColumns = false;
