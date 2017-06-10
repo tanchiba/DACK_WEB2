@@ -211,6 +211,7 @@
     <Compile Include="Models\PetaPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\BinhLuanController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\css\bootstrap-responsive.min.css" />
@@ -976,6 +977,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\BinhLuan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
