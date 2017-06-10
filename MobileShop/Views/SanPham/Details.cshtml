@@ -72,6 +72,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
     </div>
 </div>
 
@@ -79,4 +80,33 @@
      <div class="col-sm-12">
         @Html.Action("Index", "BinhLuan", new { MaSanPham = Model.MaSanPham})
     </div>
+=======
+    </div>
+</div>
+
+<div class="row">
+     <div class="col-sm-12">
+        <h2>Bình luận</h2>
+        @using (Html.BeginForm("Create", "BinhLuan", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.TextArea("NoiDung")
+            <input type="submit" value="Đăng" />
+        }
+        <div id="comments">
+            <div class="commnet">
+                <div class="comment-name">Mr X</div>
+                <div class="commnet-content">Đẹp quá</div>
+            </div>
+            <div class="commnet">
+                <div class="comment-name">Mr X</div>
+                <div class="commnet-content">Đẹp quá</div>
+            </div>
+            <div class="commnet">
+                <div class="comment-name">Mr X</div>
+                <div class="commnet-content">Đẹp quá</div>
+            </div>
+        </div>
+    </div>
+>>>>>>> 66c175ba6860cfa81ed9a5d2033261bd249ba26d
 </div>
