@@ -187,8 +187,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiSanPhamAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NhaSanXuatAminController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamAdminController.cs" />
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\LoaiSanPhamAdminBus.cs" />
+    <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\NhaSanXuatAdmin.cs" />
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\SanPhamAdminBus.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -214,11 +216,7 @@
     <Compile Include="Models\PetaPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-<<<<<<< HEAD
     <Compile Include="Controllers\BinhLuanController.cs" />
-=======
-    <Compile Include="Views\BinhLuanController.cs" />
->>>>>>> 66c175ba6860cfa81ed9a5d2033261bd249ba26d
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\css\bootstrap-responsive.min.css" />
@@ -929,6 +927,7 @@
     <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\LoaiSanPhamAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuatAmin\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -986,7 +985,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\BinhLuan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
