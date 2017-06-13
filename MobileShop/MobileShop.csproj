@@ -200,6 +200,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BUS\BinhLuanBUS.cs" />
     <Compile Include="Models\BUS\LoaiSanPhamBUS.cs" />
     <Compile Include="Models\BUS\NhaSanXuatBUS.cs" />
     <Compile Include="Models\BUS\SanPhamBUS.cs" />
@@ -213,6 +214,11 @@
     <Compile Include="Models\PetaPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+<<<<<<< HEAD
+    <Compile Include="Controllers\BinhLuanController.cs" />
+=======
+    <Compile Include="Views\BinhLuanController.cs" />
+>>>>>>> 66c175ba6860cfa81ed9a5d2033261bd249ba26d
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\css\bootstrap-responsive.min.css" />
@@ -976,9 +982,11 @@
     <Content Include="Views\Shared\_LoaiSanPham.cshtml" />
     <Content Include="Views\Shared\_NhaSanXuat.cshtml" />
     <Content Include="Views\NhaSanXuat\Index.cshtml" />
+    <Content Include="Views\BinhLuan\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\BinhLuan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
