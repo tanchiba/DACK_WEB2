@@ -12,7 +12,7 @@ namespace MobileShop.Areas.Admin.Controllers
         // GET: Admin/NhaSanXuatAmin
         public ActionResult Index()
         {
-            return View(NhaSanXuatAdmin.DanhSach());
+            return View(NhaSanXuatAdminBus.DanhSach());
         }
 
         // GET: Admin/NhaSanXuatAmin/Details/5
@@ -29,34 +29,34 @@ namespace MobileShop.Areas.Admin.Controllers
 
         // POST: Admin/NhaSanXuatAmin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(MobileShopConnection.NhaSanXuat nsx)
         {
-            try
-            {
+            //try
+            //{
                 // TODO: Add insert logic here
-
+                NhaSanXuatAdminBus.Them(nsx);
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
         }
 
         // GET: Admin/NhaSanXuatAmin/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(NhaSanXuatAdminBus.ChiTiet(id));
         }
 
         // POST: Admin/NhaSanXuatAmin/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, MobileShopConnection.NhaSanXuat nsx)
         {
             try
             {
                 // TODO: Add update logic here
-
+                NhaSanXuatAdminBus.Update(id, nsx);
                 return RedirectToAction("Index");
             }
             catch
@@ -68,23 +68,24 @@ namespace MobileShop.Areas.Admin.Controllers
         // GET: Admin/NhaSanXuatAmin/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var kq = NhaSanXuatAdminBus.ChiTiet(id);
+            return View(kq);
         }
 
         // POST: Admin/NhaSanXuatAmin/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, MobileShopConnection.NhaSanXuat nsx)
         {
-            try
-            {
+            //try
+            //{
                 // TODO: Add delete logic here
-
+                NhaSanXuatAdminBus.Delete(id, nsx);
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
         }
     }
 }

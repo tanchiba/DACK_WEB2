@@ -190,7 +190,7 @@
     <Compile Include="Areas\Admin\Controllers\NhaSanXuatAminController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamAdminController.cs" />
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\LoaiSanPhamAdminBus.cs" />
-    <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\NhaSanXuatAdmin.cs" />
+    <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\NhaSanXuatAdminBus.cs" />
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\SanPhamAdminBus.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -928,6 +928,13 @@
     <Content Include="ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\LoaiSanPhamAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\NhaSanXuatAmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuatAmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuatAmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuatAmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuatAmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPhamAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPhamAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPhamAdmin\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
