@@ -11,9 +11,10 @@ namespace MobileShop.Areas.Admin.Controllers
     public class SanPhamAdminController : Controller
     {
         // GET: Admin/SanPhamAdmin
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            return View(SanPhamAdminBus.DanhSach());
+            var dsHienthi = SanPhamAdminBus.DanhSach(page, 9);
+            return View(dsHienthi);
         }
 
         // GET: Admin/SanPhamAdmin/Details/5
@@ -25,6 +26,8 @@ namespace MobileShop.Areas.Admin.Controllers
         // GET: Admin/SanPhamAdmin/Create
         public ActionResult Create()
         {
+            ViewBag.MaNhaSanXuat = new SelectList(NhaSanXuatAdminBus.DanhSach(), "MaNhaSanXuat", "TenNhaSanXuat");
+            ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamAdminBus.DanhSach(), "MaLoaiSanPham", "TenLoaiSanPham");
             return View();
         }
 
@@ -60,6 +63,9 @@ namespace MobileShop.Areas.Admin.Controllers
         // GET: Admin/SanPhamAdmin/Edit/5
         public ActionResult Edit(int id)
         {
+            ViewBag.MaNhaSanXuat = new SelectList(NhaSanXuatAdminBus.DanhSach(), "MaNhaSanXuat", "TenNhaSanXuat", NhaSanXuatAdminBus.ChiTiet(id).MaNhaSanXuat);
+            ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamAdminBus.DanhSach(), "MaLoaiSanPham", "TenLoaiSanPham", LoaiSanPhamAdminBus.ChiTietLoaiSP(id).MaLoaiSanPham);
+
             return View(SanPhamAdminBus.ChiTietSP(id));
         }
 

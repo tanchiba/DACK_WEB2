@@ -1,4 +1,5 @@
 ﻿using MobileShopConnection;
+using PetaPoco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,10 @@ namespace MobileShop.Areas.Admin.Models.SanPhamaAdminBus
 {
     public class SanPhamAdminBus
     {
-        public static IEnumerable<SanPham> DanhSach()
+        public static Page<SanPham> DanhSach(int pageNumber, int itemPerpage)
         {
             var db = new MobileShopConnectionDB();
-            return db.Query<SanPham>("select  * from SanPham");
+            return db.Page<SanPham>(pageNumber, itemPerpage,"select  * from SanPham");
         }
         public static void Them(MobileShopConnection.SanPham sp)
         {

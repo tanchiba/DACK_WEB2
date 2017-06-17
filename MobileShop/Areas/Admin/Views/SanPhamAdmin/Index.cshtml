@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MobileShopConnection.SanPham>
+﻿@model PetaPoco.Page<MobileShopConnection.SanPham>
 
 @{
     ViewBag.Title = "Index";
@@ -12,23 +12,23 @@
         <th>
            Tên sản phẩm
         </th>
-        <th>
+        <th @*width="70"*@>
            Mô tả
         </th>
         <th>
             Xuất sứ
         </th>
-        <th>
-            Nhà sản xuất
+        <th @*width="80"*@>
+           Mã Nhà sản xuất
         </th>
         <th>
            Giá bán
         </th>
        
-        <th>
+        <th @*width="50"*@>
            Số lượng
         </th>
-        <th>
+        <th @*width="70"*@>
            Số lượng tồn
         </th>
       
@@ -36,10 +36,10 @@
            Hình ảnh
         </th>
         
-        <th></th>
+        <th @*width="80"*@>Sửa đổi</th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Items) {
     <tr>
        
         <td>
@@ -79,3 +79,9 @@
 }
 
 </table>
+<ul class="pagination">
+    @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+        <d>@Html.ActionLink("Trang " + i.ToString() + " | ", "Index", new { page = i })</d>
+    }
+</ul>
