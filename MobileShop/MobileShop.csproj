@@ -188,9 +188,13 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiSanPhamAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhaSanXuatAminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuanLyDonDatHangController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuanLyTaiKhoanController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamAdminController.cs" />
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\LoaiSanPhamAdminBus.cs" />
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\NhaSanXuatAdminBus.cs" />
+    <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\QuanLyDonDatHangBus.cs" />
+    <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\QuanLyTaiKhoanBus.cs" />
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\SanPhamAdminBus.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApiGioHangController.cs" />
@@ -938,6 +942,11 @@
     <Content Include="Areas\Admin\Views\LoaiSanPhamAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiSanPhamAdmin\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiSanPhamAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanLyTaiKhoan\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanLyTaiKhoan\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanLyTaiKhoan\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanLyTaiKhoan\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanLyDonDatHang\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

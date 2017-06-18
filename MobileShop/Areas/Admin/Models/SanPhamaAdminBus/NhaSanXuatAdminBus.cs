@@ -21,7 +21,7 @@ namespace MobileShop.Areas.Admin.Models.SanPhamaAdminBus
         public static void Delete(int id, MobileShopConnection.NhaSanXuat nsx)
         {
             var db = new MobileShopConnectionDB();
-            db.Delete<NhaSanXuat>("where MaNhaSanXuat = @0", id);
+            db.Update<NhaSanXuat>("SET BiXoa  = 1 where MaNhaSanXuat = @0", id);
         }
         public static MobileShopConnection.NhaSanXuat ChiTiet(int id)
         {
