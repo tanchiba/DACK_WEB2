@@ -44,7 +44,7 @@ namespace MobileShop.Areas.Admin.Controllers
                     if (hpf.ContentLength > 0)
                     {
                         string fileName = Guid.NewGuid().ToString();
-                       
+
                         string fullPathWithFileName = "/Assets/images/home/" + fileName + ".jpg";
                         hpf.SaveAs(Server.MapPath(fullPathWithFileName));
                         sp.HinhAnh = fullPathWithFileName;
@@ -64,13 +64,14 @@ namespace MobileShop.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.MaNhaSanXuat = new SelectList(NhaSanXuatAdminBus.DanhSach(), "MaNhaSanXuat", "TenNhaSanXuat", NhaSanXuatAdminBus.ChiTiet(id).MaNhaSanXuat);
-            ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamAdminBus.DanhSach(), "MaLoaiSanPham", "TenLoaiSanPham", LoaiSanPhamAdminBus.ChiTietLoaiSP(id).MaLoaiSanPham);
+          ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamAdminBus.DanhSach(), "MaLoaiSanPham", "TenLoaiSanPham", LoaiSanPhamAdminBus.ChiTietLoaiSP(id).MaLoaiSanPham);
 
             return View(SanPhamAdminBus.ChiTietSP(id));
         }
 
         // POST: Admin/SanPhamAdmin/Edit/5
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(int id, MobileShopConnection.SanPham sp)
         {
             try

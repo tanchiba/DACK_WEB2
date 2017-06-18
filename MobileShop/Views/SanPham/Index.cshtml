@@ -1,4 +1,7 @@
-﻿@model PetaPoco.Page<MobileShopConnection.SanPham>
+﻿
+@model  PagedList.IPagedList<MobileShopConnection.SanPham>
+@using PagedList.Mvc;
+
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +10,7 @@
 
 
 
-     @foreach (var item in Model.Items)
+     @foreach (var item in Model)
 
      {
         <div class="col-sm-4">
@@ -46,10 +49,7 @@
         </div>
      }
         <ul class="pagination">
-            @for (int i = 0; i <= Model.TotalPages; i++)
-            {
-                <li>@Html.ActionLink(i.ToString(), "Index", new { page = i })</li>
-            }
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
         </ul>
    
 
