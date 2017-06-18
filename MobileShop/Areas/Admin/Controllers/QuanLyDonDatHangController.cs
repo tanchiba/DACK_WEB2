@@ -7,38 +7,35 @@ using System.Web.Mvc;
 
 namespace MobileShop.Areas.Admin.Controllers
 {
-    public class QuanLyTaiKhoanController : Controller
+    public class QuanLyDonDatHangController : Controller
     {
-        // GET: Admin/QuanLyTaiKhoan
+        // GET: Admin/QuanLyDonDatHang
         public ActionResult Index()
         {
-            var dsTaiKhoan = QuanLyTaiKhoanBus.DanhSach();
-            return View(dsTaiKhoan);
+            var dsDonHang = QuanLyDonDatHangBus.DanhSach();
+            return View(dsDonHang);
         }
 
-        // GET: Admin/QuanLyTaiKhoan/Details/5
+        // GET: Admin/QuanLyDonDatHang/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Admin/QuanLyTaiKhoan/Create
+        // GET: Admin/QuanLyDonDatHang/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/QuanLyTaiKhoan/Create
+        // POST: Admin/QuanLyDonDatHang/Create
         [HttpPost]
-        public ActionResult Create(MobileShopConnection.AspNetUser us)
+        public ActionResult Create(FormCollection collection)
         {
             try
             {
-                Random rnd = new Random();
-                int id = rnd.Next(1, 123132);
                 // TODO: Add insert logic here
-                us.Id = "asd" + id;
-                QuanLyTaiKhoanBus.ThemTaiKhoan(us);
+
                 return RedirectToAction("Index");
             }
             catch
@@ -47,20 +44,20 @@ namespace MobileShop.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/QuanLyTaiKhoan/Edit/5
-        public ActionResult Edit(string id)
+        // GET: Admin/QuanLyDonDatHang/Edit/5
+        public ActionResult Edit(int id)
         {
-            return View(QuanLyTaiKhoanBus.ChiTietUser(id));
+            return View();
         }
 
-        // POST: Admin/QuanLyTaiKhoan/Edit/5
+        // POST: Admin/QuanLyDonDatHang/Edit/5
         [HttpPost]
-        public ActionResult Edit(string id, MobileShopConnection.AspNetUser us)
+        public ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
-                QuanLyTaiKhoanBus.Update(id, us);
+
                 return RedirectToAction("Index");
             }
             catch
@@ -69,20 +66,20 @@ namespace MobileShop.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/QuanLyTaiKhoan/Delete/5
-        public ActionResult Delete(string id)
+        // GET: Admin/QuanLyDonDatHang/Delete/5
+        public ActionResult Delete(int id)
         {
-            return View(QuanLyTaiKhoanBus.ChiTietUser(id));
+            return View();
         }
 
-        // POST: Admin/QuanLyTaiKhoan/Delete/5
+        // POST: Admin/QuanLyDonDatHang/Delete/5
         [HttpPost]
-        public ActionResult Delete(string id, MobileShopConnection.AspNetUser us)
+        public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
                 // TODO: Add delete logic here
-                QuanLyTaiKhoanBus.Delete(id, us);
+
                 return RedirectToAction("Index");
             }
             catch

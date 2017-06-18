@@ -11,7 +11,7 @@ namespace MobileShop.Areas.Admin.Models.SanPhamaAdminBus
         public static IEnumerable<LoaiSanPham> DanhSach()
         {
             var dsLoaiSanPham = new MobileShopConnectionDB();
-            return dsLoaiSanPham.Query<LoaiSanPham>("select * from loaisanpham");
+            return dsLoaiSanPham.Query<LoaiSanPham>("select * from loaisanpham ");
         }
         public static void Them(MobileShopConnection.LoaiSanPham lsp)
         {
@@ -21,7 +21,7 @@ namespace MobileShop.Areas.Admin.Models.SanPhamaAdminBus
         public static void Delete(int id, MobileShopConnection.LoaiSanPham lsp)
         {
             var db = new MobileShopConnectionDB();
-            db.Delete<LoaiSanPham>("where MaLoaiSanPham = @0", id);
+            db.Update<LoaiSanPham>("SET BiXoa = 1 where MaLoaiSanPham = @0", id);
         }
         public static MobileShopConnection.LoaiSanPham ChiTietLoaiSP(int id)
         {

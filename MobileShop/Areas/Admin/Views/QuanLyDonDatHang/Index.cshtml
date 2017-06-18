@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MobileShopConnection.DonDatHang>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDonDatHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayLap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongThanhTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaTaiKhoan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaTinhTrang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaDonDatHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayLap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongThanhTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaTaiKhoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaTinhTrang)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

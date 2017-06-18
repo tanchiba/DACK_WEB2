@@ -20,5 +20,6 @@ namespace MobileShop.Models.BUS
             var db = new MobileShopConnectionDB();
             return db.Query<SanPham>("select * from sanpham where MaLoaiSanPham = @0", id);
         }
+
     }
 }
