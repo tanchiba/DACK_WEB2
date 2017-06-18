@@ -81,32 +81,4 @@
         @Html.Action("Index", "BinhLuan", new { MaSanPham = Model.MaSanPham})
     </div>
 
-    </div>
-</div>
-
-<div class="row">
-     <div class="col-sm-12">
-        <h2>Bình luận</h2>
-        @using (Html.BeginForm("Create", "BinhLuan", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            @Html.TextArea("NoiDung")
-            <input type="submit" value="Đăng" />
-        }
-        <div id="comments">
-            <div class="commnet">
-                <div class="comment-name">Mr X</div>
-                <div class="commnet-content">Đẹp quá</div>
-            </div>
-            <div class="commnet">
-                <div class="comment-name">Mr X</div>
-                <div class="commnet-content">Đẹp quá</div>
-            </div>
-            <div class="commnet">
-                <div class="comment-name">Mr X</div>
-                <div class="commnet-content">Đẹp quá</div>
-            </div>
-        </div>
-    </div>
-
 </div>
