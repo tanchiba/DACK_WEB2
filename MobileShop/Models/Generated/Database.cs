@@ -6,7 +6,7 @@
 // 
 //     Connection String Name: `MobileShopConnection`
 //     Provider:               `System.Data.SqlClient`
-//     Connection String:      `Data Source=(local);Initial Catalog=MobileShop;Integrated Security=True`
+//     Connection String:      `Data Source=E6420-PC\SQLEXPRES;Initial Catalog=MobileShop;Integrated Security=True`
 //     Schema:                 ``
 //     Include Views:          `True`
 
@@ -201,6 +201,18 @@ namespace MobileShopConnection
 		[Column] public int? SoLuong { get; set; }
 	}
     
+	[TableName("dbo.ChiTietGioHang")]
+	[PrimaryKey("idChiTietGioHang")]
+	[ExplicitColumns]
+    public partial class ChiTietGioHang : MobileShopConnectionDB.Record<ChiTietGioHang>  
+    {
+		[Column] public int idChiTietGioHang { get; set; }
+		[Column] public int idGioHang { get; set; }
+		[Column] public int MaSanPham { get; set; }
+		[Column] public int? GiaBan { get; set; }
+		[Column] public int? SoLuong { get; set; }
+	}
+    
 	[TableName("dbo.DonDatHang")]
 	[PrimaryKey("MaDonDatHang", AutoIncrement=false)]
 	[ExplicitColumns]
@@ -214,14 +226,17 @@ namespace MobileShopConnection
 	}
     
 	[TableName("dbo.GioHang")]
-	[PrimaryKey("Id")]
+	[PrimaryKey("idGioHang")]
 	[ExplicitColumns]
     public partial class GioHang : MobileShopConnectionDB.Record<GioHang>  
     {
-		[Column] public int Id { get; set; }
-		[Column] public string MaTaiKhoan { get; set; }
+		[Column] public int idGioHang { get; set; }
+		[Column] public DateTime? NgayLap { get; set; }
 		[Column] public int MaSanPham { get; set; }
 		[Column] public int SoLuong { get; set; }
+		[Column] public int? TongThanhTien { get; set; }
+		[Column] public string MaTaiKhoan { get; set; }
+		[Column] public int MaTinhTrang { get; set; }
 	}
     
 	[TableName("dbo.LoaiSanPham")]
@@ -309,34 +324,45 @@ namespace MobileShopConnection
 		[Column] public string TenTinhTrang { get; set; }
 	}
     
-	[TableName("dbo.v_ChiTietSanPham")]
-	[ExplicitColumns]
-    public partial class v_ChiTietSanPham : MobileShopConnectionDB.Record<v_ChiTietSanPham>  
-    {
-		[Column] public int MaSanPham { get; set; }
-		[Column] public string TenSanPham { get; set; }
-		[Column] public string MoTa { get; set; }
-		[Column] public string XuatXu { get; set; }
-		[Column] public int MaNhaSanXuat { get; set; }
-		[Column] public int? GiaBan { get; set; }
-		[Column] public DateTime? NgayNhap { get; set; }
-		[Column] public int? SoLuongBan { get; set; }
-		[Column] public int? SoLuongTon { get; set; }
-		[Column] public int MaLoaiSanPham { get; set; }
-		[Column] public int? SoLuongXem { get; set; }
-		[Column] public string HinhAnh { get; set; }
-		[Column] public byte? BiXoa { get; set; }
-		[Column] public string TenNhaSanXuat { get; set; }
-	}
-    
 	[TableName("dbo.v_GioHang")]
 	[ExplicitColumns]
     public partial class v_GioHang : MobileShopConnectionDB.Record<v_GioHang>  
     {
-		[Column] public int Id { get; set; }
+		[Column] public int idGioHang { get; set; }
 		[Column] public string MaTaiKhoan { get; set; }
 		[Column] public int MaSanPham { get; set; }
 		[Column] public int SoLuong { get; set; }
 		[Column] public string TenSanPham { get; set; }
+	}
+    
+	[TableName("dbo.ViewChiTietGioHang")]
+	[ExplicitColumns]
+    public partial class ViewChiTietGioHang : MobileShopConnectionDB.Record<ViewChiTietGioHang>  
+    {
+		[Column] public string TenSanPham { get; set; }
+		[Column] public int? Expr1 { get; set; }
+		[Column] public int idChiTietGioHang { get; set; }
+		[Column] public int idGioHang { get; set; }
+		[Column] public int MaSanPham { get; set; }
+		[Column] public int? GiaBan { get; set; }
+		[Column] public int? SoLuong { get; set; }
+		[Column] public string HinhAnh { get; set; }
+	}
+    
+	[TableName("dbo.ViewGioHang")]
+	[ExplicitColumns]
+    public partial class ViewGioHang : MobileShopConnectionDB.Record<ViewGioHang>  
+    {
+		[Column] public string TenSanPham { get; set; }
+		[Column] public int idGioHang { get; set; }
+		[Column] public DateTime? NgayLap { get; set; }
+		[Column] public int MaSanPham { get; set; }
+		[Column] public int SoLuong { get; set; }
+		[Column] public int? TongThanhTien { get; set; }
+		[Column] public string MaTaiKhoan { get; set; }
+		[Column] public int MaTinhTrang { get; set; }
+		[Column] public string HinhAnh { get; set; }
+		[Column] public int? GiaBan { get; set; }
+		[Column] public string MoTa { get; set; }
 	}
 }

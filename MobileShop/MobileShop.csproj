@@ -193,6 +193,8 @@
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\NhaSanXuatAdminBus.cs" />
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\SanPhamAdminBus.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApiGioHangController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSanPhamController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -203,6 +205,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BUS\BinhLuanBUS.cs" />
+    <Compile Include="Models\BUS\GioHangBUS.cs" />
     <Compile Include="Models\BUS\LoaiSanPhamBUS.cs" />
     <Compile Include="Models\BUS\NhaSanXuatBUS.cs" />
     <Compile Include="Models\BUS\SanPhamBUS.cs" />
@@ -989,6 +992,7 @@
     <Content Include="Views\Shared\_NhaSanXuat.cshtml" />
     <Content Include="Views\NhaSanXuat\Index.cshtml" />
     <Content Include="Views\BinhLuan\Index.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
