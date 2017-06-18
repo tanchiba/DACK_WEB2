@@ -31,5 +31,18 @@ namespace MobileShop.Models.BUS
                 db.Insert(gioHang);
             }
         }
+
+        public static int checkEmtyGioHang(String maTaiKhoan)
+        {
+            using (var db = new  MobileShopConnectionDB())
+            {
+                GioHang gioHang = db.SingleOrDefault<GioHang>("Select * From GioHang where MaTaiKhoan = @0", maTaiKhoan);
+                if(gioHang == null)
+                {
+                    return 0;
+                }
+                return gioHang.idGioHang;
+            }
+        }
     }
 }
