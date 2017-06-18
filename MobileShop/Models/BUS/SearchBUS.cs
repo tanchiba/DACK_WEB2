@@ -8,11 +8,11 @@ namespace MobileShop.Models.BUS
 {
     public class SearchBUS
     {
-        public static IEnumerable<SanPham> LoadDSSanPham(String KeyWord)
+        public static IEnumerable<SanPham> LoadDSSanPham(String txtTimKiem)
         {
-            using (var db = new MobileShopConnectionDB())
-            {
-                return db.Query<SanPham>("SELECT * FROM SanPham WHERE TenSanPham = @0", KeyWord);
+            using (var db = new MobileShopConnectionDB()) { 
+            
+                return db.Query<SanPham>("SELECT * FROM SanPham WHERE TenSanPham LIKE @0", '%'+ txtTimKiem + '%');
             }
         }
     }

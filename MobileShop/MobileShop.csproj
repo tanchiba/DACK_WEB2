@@ -1004,10 +1004,10 @@
     <Content Include="Views\NhaSanXuat\Index.cshtml" />
     <Content Include="Views\BinhLuan\Index.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
