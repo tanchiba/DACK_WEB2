@@ -197,6 +197,7 @@
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\QuanLyTaiKhoanBus.cs" />
     <Compile Include="Areas\Admin\Models\SanPhamaAdminBus\SanPhamAdminBus.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApiBinhLuanController.cs" />
     <Compile Include="Controllers\ApiGioHangController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

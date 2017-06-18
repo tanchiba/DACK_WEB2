@@ -82,3 +82,17 @@
     </div>
 
 </div>
+
+@section scripts{
+    <script>
+        function postComment(){
+            const content = $("#comment-content").val();
+            const maSanPham = @Model.MaSanPham;
+            const tenTaiKhoan = "@User.Identity.Name";
+            $.post("/api/apibinhluan", {"MaSanPham":maSanPham, "NoiDung":content}, function(){
+                //alert("Đã thêm bình luân");
+                $("#comments").prepend("<div class=\"comment\"><div class=\"comment-name\">"+ tenTaiKhoan +"</div><div class=\"comment-content\">"+ content +"</div></div>")
+            });
+        }
+    </script>
+}
