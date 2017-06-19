@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MobileShop.Areas.Admin.Controllers
 {
-   [Authorize(Roles = "Admin")]
+  // [Authorize(Roles = "Admin")]
     public class SanPhamAdminController : Controller
     {
         // GET: Admin/SanPhamAdmin
@@ -33,6 +33,7 @@ namespace MobileShop.Areas.Admin.Controllers
 
         // POST: Admin/SanPhamAdmin/Create
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(MobileShopConnection.SanPham sp)
         {
             try
@@ -45,9 +46,9 @@ namespace MobileShop.Areas.Admin.Controllers
                     {
                         string fileName = Guid.NewGuid().ToString();
 
-                        string fullPathWithFileName = "/Assets/images/home/" + fileName + ".jpg";
+                        string fullPathWithFileName = "/Assets/image/products/" + fileName + ".jpg";
                         hpf.SaveAs(Server.MapPath(fullPathWithFileName));
-                        sp.HinhAnh = fullPathWithFileName;
+                        sp.HinhAnh = fileName + ".jpg";
                     }
                 }
                 sp.BiXoa = 0;
