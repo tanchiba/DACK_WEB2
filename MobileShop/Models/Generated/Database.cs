@@ -231,8 +231,8 @@ namespace MobileShopConnection
     public partial class GioHang : MobileShopConnectionDB.Record<GioHang>  
     {
 		[Column] public int idGioHang { get; set; }
-		[Column] public DateTime NgayLap { get; set; }
-		[Column] public int TongThanhTien { get; set; }
+		[Column] public DateTime? NgayLap { get; set; }
+		[Column] public int? TongThanhTien { get; set; }
 		[Column] public string MaTaiKhoan { get; set; }
 		[Column] public int MaTinhTrang { get; set; }
 	}
@@ -313,6 +313,17 @@ namespace MobileShopConnection
 		[Column] public string NoiSong { get; set; }
 	}
     
+	[TableName("dbo.tempGioHang")]
+	[PrimaryKey("id")]
+	[ExplicitColumns]
+    public partial class tempGioHang : MobileShopConnectionDB.Record<tempGioHang>  
+    {
+		[Column] public int id { get; set; }
+		[Column] public string MaTaiKhoan { get; set; }
+		[Column] public int MaSanPham { get; set; }
+		[Column] public int SoLuong { get; set; }
+	}
+    
 	[TableName("dbo.TinhTrang")]
 	[PrimaryKey("MaTinhTrang", AutoIncrement=false)]
 	[ExplicitColumns]
@@ -322,15 +333,18 @@ namespace MobileShopConnection
 		[Column] public string TenTinhTrang { get; set; }
 	}
     
-	[TableName("dbo.v_GioHang")]
+	[TableName("dbo.vGioHang")]
 	[ExplicitColumns]
-    public partial class v_GioHang : MobileShopConnectionDB.Record<v_GioHang>  
+    public partial class vGioHang : MobileShopConnectionDB.Record<vGioHang>  
     {
-		[Column] public int idGioHang { get; set; }
+		[Column] public int id { get; set; }
 		[Column] public string MaTaiKhoan { get; set; }
 		[Column] public int MaSanPham { get; set; }
 		[Column] public int SoLuong { get; set; }
 		[Column] public string TenSanPham { get; set; }
+		[Column] public int? GiaBan { get; set; }
+		[Column] public string HinhAnh { get; set; }
+		[Column] public string MoTa { get; set; }
 	}
     
 	[TableName("dbo.ViewChiTietGioHang")]
@@ -345,22 +359,5 @@ namespace MobileShopConnection
 		[Column] public int? GiaBan { get; set; }
 		[Column] public int? SoLuong { get; set; }
 		[Column] public string HinhAnh { get; set; }
-	}
-    
-	[TableName("dbo.ViewGioHang")]
-	[ExplicitColumns]
-    public partial class ViewGioHang : MobileShopConnectionDB.Record<ViewGioHang>  
-    {
-		[Column] public string TenSanPham { get; set; }
-		[Column] public int idGioHang { get; set; }
-		[Column] public DateTime? NgayLap { get; set; }
-		[Column] public int MaSanPham { get; set; }
-		[Column] public int SoLuong { get; set; }
-		[Column] public int? TongThanhTien { get; set; }
-		[Column] public string MaTaiKhoan { get; set; }
-		[Column] public int MaTinhTrang { get; set; }
-		[Column] public string HinhAnh { get; set; }
-		[Column] public int? GiaBan { get; set; }
-		[Column] public string MoTa { get; set; }
 	}
 }

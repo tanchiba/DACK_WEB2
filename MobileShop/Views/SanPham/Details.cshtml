@@ -56,16 +56,19 @@
                     <p>@Model.MoTa</p>
                     <img src="~/Assets/images/product-details/rating.png" alt="">
                     <span>
-                        <span>US $@Model.GiaBan</span>
-                        <label>Quantity:</label>
-                        <input type="text" value="3">
-                        <button type="button" class="btn btn-fefault cart">
-                            <i class="fa fa-shopping-cart"></i>
-                            Add to cart
-                        </button>
+                        <span>@Model.GiaBan VNĐ</span>
+                        @*<label>Quantity:</label>
+                        <input type="text" value="@Model.SoLuongXem">*@
+                        @using (Html.BeginForm("ThemGioHang", "GioHang", FormMethod.Post))
+                        {
+                            @Html.Hidden("maSanPham", Model.MaSanPham)
+                            <button class="btn btn-default add-to-cart">
+                                <i class="fa fa-shopping-cart"></i>Add to cart
+                            </button>
+                        }
                     </span>
-                    <p><b>Số lượng:</b> @Model.SoLuongTon</p>
-                    <p><b>Nhà Sản Xuất:</b> @Model.MaNhaSanXuat</p>
+                    <p><b>Số lượng xem:</b> @Model.SoLuongXem</p>
+                    @*<p><b>Nhà Sản Xuất:</b> @Model.MaNhaSanXuat</p>*@
                     <p><b>Xuất xứ:</b> @Model.XuatXu</p>
                     <a href=""><img src="~/Assets/images/product-details/share.png" class="share img-responsive" alt=""></a>
                 </div><!--/product-information-->

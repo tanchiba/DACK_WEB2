@@ -1007,10 +1007,11 @@
     <Content Include="Views\Shared\_NhaSanXuat.cshtml" />
     <Content Include="Views\NhaSanXuat\Index.cshtml" />
     <Content Include="Views\BinhLuan\Index.cshtml" />
-    <Content Include="Views\GioHang\Index.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Shared\_LoaiSanPhamMenu.cshtml" />
     <Content Include="Views\Shared\_NhaSanXuatMenu.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\GioHang\ThanhToanGioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
