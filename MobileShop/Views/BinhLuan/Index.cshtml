@@ -1,4 +1,6 @@
-﻿@model IEnumerable<MobileShopConnection.BinhLuan>
+﻿@model PagedList.IPagedList<MobileShopConnection.BinhLuan>
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = "Index";
     Layout = null;
@@ -7,15 +9,6 @@
 <h2>Bình luận</h2>
 @if (User.Identity.IsAuthenticated)
 {
-    @*using (Html.BeginForm("Create", "BinhLuan", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-        @Html.Hidden("MaSanPham", (int)ViewBag.MaSanPham)
-
-        <textarea name="NoiDung" style="width:100%"></textarea>
-        <input type="submit" value="Đăng" />
-
-    }*@
     <textarea id="comment-content"></textarea>
     <input value="Đăng" type="button" onclick="postComment()"/>
 }
@@ -32,3 +25,6 @@ else
         </div>
     }
 </div>
+<ul class="pagination">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</ul>

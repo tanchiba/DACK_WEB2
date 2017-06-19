@@ -231,10 +231,8 @@ namespace MobileShopConnection
     public partial class GioHang : MobileShopConnectionDB.Record<GioHang>  
     {
 		[Column] public int idGioHang { get; set; }
-		[Column] public DateTime? NgayLap { get; set; }
-		[Column] public int MaSanPham { get; set; }
-		[Column] public int SoLuong { get; set; }
-		[Column] public int? TongThanhTien { get; set; }
+		[Column] public DateTime NgayLap { get; set; }
+		[Column] public int TongThanhTien { get; set; }
 		[Column] public string MaTaiKhoan { get; set; }
 		[Column] public int MaTinhTrang { get; set; }
 	}
