@@ -22,11 +22,11 @@ namespace MobileShop.Models.BUS
 
         }
 
-        public static Page<SanPham> HienThiDanhSachSanPham(int pageNumber, int itemPerpage)
-        {
-            var db = new MobileShopConnectionDB();
-            return db.Page<SanPham>(pageNumber, itemPerpage, "SELECT * FROM SanPham WHERE BiXoa <> 1 ORDER BY SoLuongBan DESC ");
-        }
+        //public static Page<SanPham> HienThiDanhSachSanPham(int pageNumber, int itemPerpage)
+        //{
+        //    var db = new MobileShopConnectionDB();
+        //    return db.Page<SanPham>(pageNumber, itemPerpage, "SELECT * FROM SanPham WHERE BiXoa <> 1 ORDER BY SoLuongBan DESC ");
+        //}
 
 
     }

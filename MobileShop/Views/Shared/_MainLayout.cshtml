@@ -89,13 +89,7 @@
                     </div>
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
-                            @*<ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
-                            </ul>*@
+                           
                             @Html.Partial("_LoginPartial")
                         </div>
                     </div>
@@ -141,11 +135,18 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="search_box pull-right">
-                            <input type="text" placeholder="Search" />
+                    @using (Html.BeginForm("Index","Search", FormMethod.Get))
+                    {
+                        <div class="col-sm-3">
+                            
+                                <div class="search_box pull-right">
+                                    <input type="text" placeholder="Bạn tìm gì..." value="@ViewBag.txtTimKiem" name="txtTimKiem" />
+                                    <button class="btn btn-default" type="submit">Tìm</button>
+                                </div>
+                          
                         </div>
-                    </div>
+                    }
+                   
                 </div>
             </div>
         </div><!--/header-bottom-->
@@ -208,7 +209,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="left-sidebar">
-                        <h2>Category</h2>
+                        <h2>DANH MỤC SẢN PHẨM</h2>
                         <div class="panel-group category-products" id="accordian">
                             <!--category-productsr-->
                             <div class="panel panel-default">

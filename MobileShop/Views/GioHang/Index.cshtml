@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MobileShopConnection.ViewGioHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Giỏ hàng của bạn</h2>
+<div class="table-responsive cart_info">
+    @{
+        if (Model == null || !Model.Any())
+        {
+            <h3 class="text-info">Không có sản phẩm trong giỏ hàng</h3>
+        }
+        else
+        {
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+                        <td>STT</td>
+                        <td class="image">Sản phẩm</td>
+                        <td class="description"></td>
+                        <td class="price">Giá</td>
+                        <td class="quantity">Số lượng</td>
+                        <td class="total">Tổng giá</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                        foreach (var item in Model)
+                        {
+                            var gia = @item.GiaBan * @item.SoLuong;
+                            <tr>
+                                <td>@i</td>
+                                <td @*class="cart_product"*@ >
+                                    <a href=""><img src="@Url.Content("~/Assets/images/home/" + @item.HinhAnh)" alt="" height="100" width="100"/></a>
+                                </td>
+                                <td class="cart_description">
+                                    <h4><a href="">@item.TenSanPham</a></h4>
+                                    <p>@item.MoTa</p>
+                                </td>
+                                <td class="cart_price">
+                                    <p>@item.GiaBan VNĐ</p>
+                                </td>
+                                <td class="cart_quantity">
+                                    <div class="cart_quantity_button">
+                                        <a class="cart_quantity_up" href=""> + </a>
+                                        <input class="cart_quantity_input" type="text" name="quantity" value="@item.SoLuong" autocomplete="off" size="2">
+                                        <a class="cart_quantity_down" href=""> - </a>
+                                    </div>
+                                </td>
+                                <td class="cart_total">
+                                    <p class="cart_total_price">@gia VNĐ</p>
+                                </td>
+                                <td @*class="cart_delete"*@>
+                                    <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                            i++;
+                        }
+
+                    }
+                  
+
+
+                </tbody>
+            </table>
+           
+                    <span>Tổng tiền: <span>tongtien</span></span>
+              
+
+            <button class="btn btn-success">
+                Đặt Hàng
+            </button>
+        }
+    }
+</div>
+
+
+
+
+

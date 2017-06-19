@@ -1,4 +1,7 @@
-﻿@model PetaPoco.Page<MobileShopConnection.SanPham>
+﻿
+@model  PagedList.IPagedList<MobileShopConnection.SanPham>
+@using PagedList.Mvc;
+
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +10,7 @@
 
 
 
-     @foreach (var item in Model.Items)
+     @foreach (var item in Model)
 
      {
         <div class="col-sm-4">
@@ -25,8 +28,15 @@
                                 <h2>@item.GiaBan VNĐ</h2>
                                 <p>@item.TenSanPham</p>
                             </a>
-                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-</div>
+                            @using (Html.BeginForm("ThemGioHang", "GioHang", FormMethod.Post))
+                            {
+                                @Html.Hidden("maSanPham", item.MaSanPham)
+                                <button class="btn btn-default add-to-cart">
+                                    <i class="fa fa-shopping-cart"></i>Add to cart
+                                </button>
+                            }
+                                @*<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>*@
+                        </div>
                     </div>
                 </div>
                 <div class="choose">
@@ -39,10 +49,7 @@
         </div>
      }
         <ul class="pagination">
-            @for (int i = 0; i <= Model.TotalPages; i++)
-            {
-                <li>@Html.ActionLink(i.ToString(), "Index", new { page = i })</li>
-            }
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
         </ul>
    
 
