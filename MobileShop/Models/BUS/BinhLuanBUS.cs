@@ -27,7 +27,7 @@ namespace MobileShop.Models.BUS
         {
             using (var db = new MobileShopConnectionDB())
             {
-                return db.Query<BinhLuan>("SELECT * FROM BinhLuan WHERE MaSanPham = @0", MaSanPham);
+                return db.Query<BinhLuan>("SELECT * FROM BinhLuan WHERE MaSanPham = @0 order by Ngay desc", MaSanPham);
             }
         }
     }
