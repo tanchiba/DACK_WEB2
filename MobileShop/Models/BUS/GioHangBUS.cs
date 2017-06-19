@@ -20,15 +20,15 @@ namespace MobileShop.Models.BUS
         {
             using (var db = new MobileShopConnectionDB())
             {
-                GioHang gioHang = new GioHang()
-                {
-                    NgayLap = DateTime.Now,
-                    MaSanPham = maSanPham,
-                    SoLuong = 1,
-                    MaTaiKhoan = MaTaiKhoan,
-                    MaTinhTrang = 1
-                };
-                db.Insert(gioHang);
+                //GioHang gioHang = new GioHang()
+                //{
+                //    NgayLap = DateTime.Now,
+                //    MaSanPham = maSanPham,
+                //    SoLuong = 1,
+                //    MaTaiKhoan = MaTaiKhoan,
+                //    MaTinhTrang = 1
+                //};
+                //db.Insert(gioHang);
             }
         }
 

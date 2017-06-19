@@ -15,6 +15,13 @@ namespace MobileShop.Models.BUS
             return dsLoaiSanPham.Query<LoaiSanPham>("select * from loaisanpham where BiXoa = 0");
         }
 
+        //public static IEnumerable<SanPham> DanhSach1()
+        //{
+        //    var dsLoaiSanPham = new MobileShopConnectionDB();
+        //    return dsLoaiSanPham.Query<SanPham>("select * from SanPham WHERE BiXoa = 0");
+        //}
+
+
         public static IEnumerable<SanPham> ChiTiet(int id)
         {
             var db = new MobileShopConnectionDB();

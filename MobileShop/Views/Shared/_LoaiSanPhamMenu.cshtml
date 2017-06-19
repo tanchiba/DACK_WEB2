@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MobileShopConnection.LoaiSanPham>
+<div class="panel-group category-products" id="accordian">
+    @foreach (var item in Model)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    @Html.ActionLink(item.TenLoaiSanPham,"Index", "LoaiSanPham", new { id = @item.MaLoaiSanPham }, new { @class = "toplink" })
+                </h4>
+            </div>
+        </div>
+
+    }
+
+
+</div>
+
+
+
