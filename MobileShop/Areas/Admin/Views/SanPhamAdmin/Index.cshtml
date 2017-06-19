@@ -8,40 +8,43 @@
 </p>
 <table class="table">
     <tr>
-       
-        <th>
+        <th width="50">
+            STT
+        </th>
+        <th width="90">
            Tên sản phẩm
         </th>
-        <th @*width="70"*@>
+        <th width="90">
            Mô tả
         </th>
-        <th>
+        <th width="80">
             Xuất sứ
         </th>
-        <th @*width="80"*@>
+        <th width="80">
            Mã Nhà sản xuất
         </th>
-        <th>
+        <th width="70">
            Giá bán
         </th>
        
-        <th @*width="50"*@>
+        <th width="50">
            Số lượng
         </th>
-        <th @*width="70"*@>
+        <th width="70">
            Số lượng tồn
         </th>
       
-        <th>
+        <th width="90">
            Hình ảnh
         </th>
         
-        <th @*width="80"*@>Sửa đổi</th>
+        <th width="80">Sửa đổi</th>
     </tr>
 
+    @{ int k = 1;}
 @foreach (var item in Model.Items) {
     <tr>
-       
+       <td>@(k++)</td>
         <td>
             @Html.DisplayFor(modelItem => item.TenSanPham)
         </td>
@@ -67,7 +70,7 @@
       
         
         <td>
-            <img src="@item.HinhAnh"/>
+             <img src="@Url.Content("~/Assets/images/home/" + item.HinhAnh)" />
         </td>
       
         <td>
