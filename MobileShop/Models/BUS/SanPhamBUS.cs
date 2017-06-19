@@ -28,6 +28,20 @@ namespace MobileShop.Models.BUS
         //    return db.Page<SanPham>(pageNumber, itemPerpage, "SELECT * FROM SanPham WHERE BiXoa <> 1 ORDER BY SoLuongBan DESC ");
         //}
 
+        public static IEnumerable<SanPham> TimKiemNangCao(string tensp, string xuatxu, string lsp, string nsx)
+        {
+            var db = new MobileShopConnectionDB();
+            return db.Query<SanPham>("SELECT* FROM SanPham WHERE TenSanPham LIKE @0 OR XuatXu LIKE @1 OR MaLoaiSanPham LIKE @2 OR MaNhaSanXuat LIKE @3", '%' + tensp + '%', '%'+ xuatxu +'%', '%'+ lsp +'%', '%'+ nsx +'%');
+
+        }
+
+        public static IEnumerable<SanPham> ListSPLQ(int id)
+        {
+            using (var db = new MobileShopConnectionDB())
+            {
+                return db.Query<SanPham>("SELECT top 3 * FROM SanPham WHERE MaSanPham <> @0 AND MaLoaiSanPham =  (Select MaLoaiSanPham from SanPham where MaSanPham = @0) ORDER BY SoLuongBan DESC ", id);
+            }
+        }
 
     }
 }

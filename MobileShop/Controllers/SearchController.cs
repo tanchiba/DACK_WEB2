@@ -12,7 +12,7 @@ namespace MobileShop.Controllers
         // GET: Search
         public ActionResult Index(String txtTimKiem)
         {
-            ViewBag.txtTimKiem = txtTimKiem;
+            ViewBag.txttimKiem = txtTimKiem;
             return View(SearchBUS.LoadDSSanPham(txtTimKiem));
         }
     }

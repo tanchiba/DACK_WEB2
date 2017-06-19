@@ -92,5 +92,23 @@ namespace MobileShop.Controllers
                 return View();
             }
         }
+
+        public ActionResult IndexSearchNangCao()
+        {
+
+            ViewBag.MaNhaSanXuat = new SelectList(NhaSanXuatBUS.DanhSach(), "MaNhaSanXuat", "TenNhaSanXuat");
+            ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamBUS.DanhSach(), "MaLoaiSanPham", "TenLoaiSanPham");
+
+            return View();
+        }
+        [HttpGet]
+        //int nsx, int lsp, 
+        public ActionResult TimKiemNangCao(string tensp, string xuatxu, string lsp, string nsx, MobileShopConnection.SanPham sp)
+        {
+            var dsSanPham = SanPhamBUS.DanhSach();
+
+            dsSanPham = SanPhamBUS.TimKiemNangCao(tensp, xuatxu, lsp, nsx);
+            return View(dsSanPham);
+        }
     }
 }

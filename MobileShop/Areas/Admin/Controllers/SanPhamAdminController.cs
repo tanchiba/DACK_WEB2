@@ -64,8 +64,8 @@ namespace MobileShop.Areas.Admin.Controllers
         // GET: Admin/SanPhamAdmin/Edit/5
         public ActionResult Edit(int id)
         {
-            ViewBag.MaNhaSanXuat = new SelectList(NhaSanXuatAdminBus.DanhSach(), "MaNhaSanXuat", "TenNhaSanXuat", NhaSanXuatAdminBus.ChiTiet(id).MaNhaSanXuat);
-          ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamAdminBus.DanhSach(), "MaLoaiSanPham", "TenLoaiSanPham", LoaiSanPhamAdminBus.ChiTietLoaiSP(id).MaLoaiSanPham);
+            ViewBag.MaNhaSanXuat = new SelectList(NhaSanXuatAdminBus.DanhSach(), "MaNhaSanXuat", "TenNhaSanXuat", SanPhamAdminBus.ChiTietSP(id).MaNhaSanXuat);
+           ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamAdminBus.DanhSach(), "MaLoaiSanPham", "TenLoaiSanPham", SanPhamAdminBus.ChiTietSP(id).MaLoaiSanPham);
 
             return View(SanPhamAdminBus.ChiTietSP(id));
         }

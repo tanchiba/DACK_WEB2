@@ -1,0 +1,82 @@
+﻿@model MobileShopConnection.GioHang
+@{
+    ViewBag.Title = "checkout";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Đơn Hàng của bạn</h2>
+
+<div class="col-sm-9 padding-right">
+    <div class="row shop-tracking-status">
+
+        <div class="col-md-12">
+            <div class="well">
+                <h4>Tình trạng đơn hàng của bạn</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="prefix">Mã Đơn Hàng:</span>
+                        <span class="label label-success">@Model.idGioHang</span>
+                    </li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="prefix">Ngày Tạo Đơn Hàng:</span>
+                        <span class="label label-success">@Model.NgayLap</span>
+                    </li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="prefix">Tổng Giá Trị Đơn Hàng:</span>
+                        <span class="label label-success">@Model.TongThanhTien VNĐ</span>
+                    </li>
+                </ul>
+                <div class="order-status">
+                    <div class="order-status-timeline">
+                        <!-- class names: c0 c1 c2 c3 and c4 -->
+                        @switch (Model.MaTinhTrang)
+                        {
+                            case 1:
+                                <div class="order-status-timeline-completion c0"></div>;
+                                break;
+                            case 2:
+                                <div class="order-status-timeline-completion c1"></div>;
+                                break;
+                            case 3:
+                                <div class="order-status-timeline-completion c2"></div>;
+                                break;
+                            case 4:
+                                <div class="order-status-timeline-completion c3"></div>;
+                                break;
+                         
+                            default:
+                                <div class="order-status-timeline-completion c2"></div>;
+                                break;
+                        }
+
+
+                    </div>
+                    <div class="image-order-status image-order-status-new active img-circle">
+                        <span class="status">Accepted</span>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="image-order-status image-order-status-active active img-circle">
+                        <span class="status">In progress</span>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="image-order-status image-order-status-intransit active img-circle">
+                        <span class="status">Shipped</span>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="image-order-status image-order-status-delivered active img-circle">
+                        <span class="status">Delivered</span>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="image-order-status image-order-status-completed active img-circle">
+                        <span class="status">Completed</span>
+                        <div class="icon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

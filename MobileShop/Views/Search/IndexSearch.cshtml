@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<MobileShopConnection.SanPham>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "IndexSearch";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
 <h2>Kết quả tìm kiếm</h2>
-@foreach (var item in Model)
+@foreach(var item in Model)
 
 {
     <div class="col-sm-4">
@@ -36,7 +36,7 @@
             <div class="choose">
                 <ul class="nav nav-pills nav-justified">
                     <li><a href="@Url.Action("Details", "SanPham", new { id = item.MaSanPham })"><i class="fa fa-plus-square"></i>Details</a></li>
-                   
+
                 </ul>
             </div>
         </div>

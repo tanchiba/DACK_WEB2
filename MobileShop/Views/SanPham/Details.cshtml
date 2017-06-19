@@ -53,7 +53,7 @@
                     <!--/product-information-->
                     <img src="~/Assets/images/product-details/new.jpg" class="newarrival" alt="">
                     <h2>@Model.TenSanPham</h2>
-                    <p>@Model.MoTa</p>
+                    <p>@Html.Raw(Model.MoTa)</p>
                     <img src="~/Assets/images/product-details/rating.png" alt="">
                     <span>
                         <span>@Model.GiaBan VNĐ</span>
@@ -86,16 +86,60 @@
 
 </div>
 
-@section scripts{
-    <script>
-        function postComment(){
-            const content = $("#comment-content").val();
-            const maSanPham = @Model.MaSanPham;
-            const tenTaiKhoan = "@User.Identity.Name";
-            $.post("/api/apibinhluan", {"MaSanPham":maSanPham, "NoiDung":content}, function(){
-                //alert("Đã thêm bình luân");
-                $("#comments").prepend("<div class=\"comment\"><div class=\"comment-name\">"+ tenTaiKhoan +"</div><div class=\"comment-content\">"+ content +"</div></div>")
-            });
-        }
-    </script>
-}
+@*<div class="recommended_items">
+    <!--recommended_items-->
+    <h2 class="title text-center">recommended items</h2>
+
+
+    @foreach (var item in ViewBag.sanphamlienquan)
+    {
+        <div class="col-sm-4">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <img src="@Url.Content("~/Assets/images/home/" + @item.HinhAnh)" alt="" />
+                        <h2>@item.GiaBan VNĐ</h2>
+                        <p>@item.TenSanPham</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="overlay-content">
+                            <a href="@Url.Action("Details", "SanPham", new { id = item.MaSanPham })">
+                                <h2>@item.GiaBan VNĐ</h2>
+                                <p>@item.TenSanPham</p>
+                            </a>
+                            @using (Html.BeginForm("ThemGioHang", "GioHang", FormMethod.Post))
+                            {
+                               // @Html.Hidden("maSanPham", item.MaSanPham)
+                                <button class="btn btn-default add-to-cart">
+                                    <i class="fa fa-shopping-cart"></i>Add to cart
+                                </button>
+                            }
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="choose">
+                    <ul class="nav nav-pills nav-justified">
+                        <li><a href="@Url.Action("Details", "SanPham", new { id = item.MaSanPham })"><i class="fa fa-plus-square"></i>Details</a></li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+</div>*@
+
+    @section scripts{
+        <script>
+            function postComment(){
+                const content = $("#comment-content").val();
+                const maSanPham = @Model.MaSanPham;
+                const tenTaiKhoan = "@User.Identity.Name";
+                $.post("/api/apibinhluan", {"MaSanPham":maSanPham, "NoiDung":content}, function(){
+                    //alert("Đã thêm bình luân");
+                    $("#comments").prepend("<div class=\"comment\"><div class=\"comment-name\">"+ tenTaiKhoan +"</div><div class=\"comment-content\">"+ content +"</div></div>")
+                });
+            }
+        </script>
+    }

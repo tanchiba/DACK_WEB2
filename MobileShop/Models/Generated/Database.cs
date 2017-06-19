@@ -237,6 +237,19 @@ namespace MobileShopConnection
 		[Column] public int MaTinhTrang { get; set; }
 	}
     
+	[TableName("dbo.KhachHang")]
+	[PrimaryKey("idKhachHang", AutoIncrement=false)]
+	[ExplicitColumns]
+    public partial class KhachHang : MobileShopConnectionDB.Record<KhachHang>  
+    {
+		[Column] public string idKhachHang { get; set; }
+		[Column] public string HoTen { get; set; }
+		[Column] public string DiaChi { get; set; }
+		[Column] public string SDT { get; set; }
+		[Column] public string Email { get; set; }
+		[Column] public short? MaTinhTrang { get; set; }
+	}
+    
 	[TableName("dbo.LoaiSanPham")]
 	[PrimaryKey("MaLoaiSanPham", AutoIncrement=false)]
 	[ExplicitColumns]
@@ -359,5 +372,16 @@ namespace MobileShopConnection
 		[Column] public int? GiaBan { get; set; }
 		[Column] public int? SoLuong { get; set; }
 		[Column] public string HinhAnh { get; set; }
+	}
+    
+	[TableName("dbo.ViewDonHang")]
+	[ExplicitColumns]
+    public partial class ViewDonHang : MobileShopConnectionDB.Record<ViewDonHang>  
+    {
+		[Column] public string UserName { get; set; }
+		[Column] public int idGioHang { get; set; }
+		[Column] public int? TongThanhTien { get; set; }
+		[Column] public DateTime? NgayLap { get; set; }
+		[Column] public string TenTinhTrang { get; set; }
 	}
 }

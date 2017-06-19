@@ -68,5 +68,28 @@ namespace MobileShop.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public ActionResult checkout(string name, string address, string phone, string email)
+        {
+            IEnumerable<vGioHang> dsCTGH = GioHangBUS.LoadListGioHang(User.Identity.GetUserId());
+            int TongTien = 0;
+
+            foreach (var item in dsCTGH)
+            {
+                TongTien += (int)item.SoLuong * (int)item.GiaBan;
+                //OrderDetailBUS.Them(, item.MaSanPham, (int)item.price, item.SoLuong);
+            }
+            OderBUS.Them(User.Identity.GetUserId(), TongTien, name, address, phone, email);
+
+
+            foreach (var item in dsCTGH)
+            {
+                OrderDetailBUS.Them(OderBUS.getOrder(User.Identity.GetUserId(), TongTien).idGioHang, item.MaSanPham, (int)item.GiaBan, item.SoLuong);
+            }
+
+            GioHangBUS.RemoveTaiKhoan(User.Identity.GetUserId());
+            return View(OderBUS.getOrder(User.Identity.GetUserId(), TongTien));
+        }
+
     }
 }
