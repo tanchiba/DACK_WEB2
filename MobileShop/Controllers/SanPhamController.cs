@@ -23,6 +23,7 @@ namespace MobileShop.Controllers
         public ActionResult Details(int id)
         {
             var db = SanPhamBUS.ChiTiet(id);
+            ViewBag.sanphamlienquan = SanPhamBUS.ListSPLQ(id);
             return View(db);
            
         }
